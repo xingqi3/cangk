@@ -1,5 +1,9 @@
 package com.xingqi3.cangk.controller;
 
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlElement;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +19,14 @@ import ch.qos.logback.classic.Logger;
 @RequestMapping("/sc/weixin/receiver")
 public class MesseageReceiverController{
 	
-	private static final Logger LOG = (Logger) LoggerFactory.getLogger(MesseageReceiverController.class);
+	private static final Logger LOG=(Logger) LoggerFactory.getLogger(MesseageReceiverController.class);
 
 	@GetMapping 
 	public String echo( 
-		String signature,
-		String timestamp,
-		String nonce,
-		String echostr
+		@RequestParam("signature") String signature,
+		@RequestParam("timestamp") String timestamp,
+		@RequestParam("nonce")String nonce,
+    	@RequestParam("echostr")String echostr
 		){
 		return echostr; 
 	}
@@ -32,8 +36,7 @@ public class MesseageReceiverController{
 			@RequestParam(value="timestamp",required=false)String timestamp,
 			@RequestParam(value="nonce",required=false)String nonce,
 			@RequestBody String xml
-			)
-	{
+			)	{
 		LOG.trace("\n收到请求参数\n"
 				+"   signature:{}\n"
 				+"   timestamp:{}\n"
@@ -42,5 +45,26 @@ public class MesseageReceiverController{
 				,signature,timestamp,nonce,xml);
 		return"success";		
 	};
- 
+	public abstract class InMessage implements Serializable{
+		private static final long serialVersionUID=1L;
+		
+		@XmlElement(name="ToUserName")
+		private String toUserName;
+		
+		@XmlElement(name="FromUserName")
+		private String fromUserName;
+		
+		@XmlElement(name="CreateTime")
+		private String createTime;
+		
+		@XmlElement(name="MsgType")
+		private String msgType;
+		
+		@XmlElement(name="MsgId")
+		private String msgid;
+		
+		protected InMessage(String type) {
+			this.msgType=type;
+		}	
+	}
 }
