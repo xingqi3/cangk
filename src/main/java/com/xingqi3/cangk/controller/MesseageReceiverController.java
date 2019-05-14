@@ -45,26 +45,5 @@ public class MesseageReceiverController{
 				,signature,timestamp,nonce,xml);
 		return"success";		
 	};
-	public abstract class InMessage implements Serializable{
-		private static final long serialVersionUID=1L;
-		
-		@XmlElement(name="ToUserName")
-		private String toUserName;
-		
-		@XmlElement(name="FromUserName")
-		private String fromUserName;
-		
-		@XmlElement(name="CreateTime")
-		private String createTime;
-		
-		@XmlElement(name="MsgType")
-		private String msgType;
-		
-		@XmlElement(name="MsgId")
-		private String msgid;
-		
-		protected InMessage(String type) {
-			this.msgType=type;
-		}	
+	
 	}
-}
