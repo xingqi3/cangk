@@ -5,7 +5,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import com.xingqi3.cangk.domain.InMessage;
 import com.xingqi3.cangk.domain.event.EventInMessage;
+import com.xingqi3.cangk.domain.image.ImageInMessage;
+import com.xingqi3.cangk.domain.location.LocationInMessage;
+import com.xingqi3.cangk.domain.shortvido.ShortvidoInMessage;
 import com.xingqi3.cangk.domain.text.TextInMessage;
+import com.xingqi3.cangk.domain.video.VideoInMessage;
+import com.xingqi3.cangk.domain.voice.VoiceInMessage;
 
 public class MessageTypeRegister {
 	
@@ -14,11 +19,11 @@ public class MessageTypeRegister {
 	static {
 		register("text",TextInMessage.class);
 		register("event",EventInMessage.class);
-		register("location",TextInMessage.class);
-		register("image",TextInMessage.class);
-		register("video",TextInMessage.class);
-		register("shortvido",TextInMessage.class);
-		register("voice",TextInMessage.class);
+		register("location",LocationInMessage.class);
+		register("image",ImageInMessage.class);
+		register("video",VideoInMessage.class);
+		register("shortvido",ShortvidoInMessage.class);
+		register("voice",VoiceInMessage.class);
 		
 	}
 	
