@@ -59,7 +59,6 @@ public class MesseageReceiverController{
 		String type=xml.substring(xml.indexOf("<MsgType><![CDATA[")+18);
 		type=type.substring(0,type.indexOf("]]></MsgType>"));
 		Class<InMessage> cla=MessageTypeMapper.getClass(type);
-		
 		InMessage inMessage=JAXB.unmarshal(new StringReader(xml),cla);	
 		LOG.debug("转换得到的消息对象\n{}\n",inMessage.toString());
 		inMessageTemplate.execute(new RedisCallback<String>(){
