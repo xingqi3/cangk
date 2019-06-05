@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.xingqi3.cangk.domain.InMessage;
 import com.xingqi3.cangk.domain.event.EventInMessage;
 import com.xingqi3.cangk.domain.image.ImageInMessage;
+import com.xingqi3.cangk.domain.link.LinkInMessage;
 import com.xingqi3.cangk.domain.location.LocationInMessage;
 import com.xingqi3.cangk.domain.shortvido.ShortvidoInMessage;
 import com.xingqi3.cangk.domain.text.TextInMessage;
@@ -24,6 +25,8 @@ public class MessageTypeRegister {
 		register("video",VideoInMessage.class);
 		register("shortvido",ShortvidoInMessage.class);
 		register("voice",VoiceInMessage.class);
+		register("link",LinkInMessage.class);
+
 		
 	}
 	

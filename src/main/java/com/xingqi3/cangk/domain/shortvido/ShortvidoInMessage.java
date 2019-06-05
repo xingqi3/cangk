@@ -1,15 +1,21 @@
 package com.xingqi3.cangk.domain.shortvido;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.xingqi3.cangk.domain.InMessage;
-
+@XmlRootElement(name="xml")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ShortvidoInMessage extends InMessage {
 
-	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "MediaId")
+	@JsonProperty("MediaId")
 	private String mediaId;
 	@XmlElement(name = "ThumbMediaId")
+	@JsonProperty("ThumbMediaId")
 	private String thumbMediaId;
 
 	protected ShortvidoInMessage(String type) {
@@ -34,7 +40,7 @@ public class ShortvidoInMessage extends InMessage {
 	}
 
 	public static long getSerialversionuid() {
-		return serialVersionUID;
+		return getSerialversionuid();
 	}
 
 }

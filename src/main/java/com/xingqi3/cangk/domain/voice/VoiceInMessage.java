@@ -1,9 +1,13 @@
 package com.xingqi3.cangk.domain.voice;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.xingqi3.cangk.domain.InMessage;
-
+@XmlRootElement(name="xml")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class VoiceInMessage extends InMessage {
 	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "MediaId")
@@ -36,4 +40,11 @@ public class VoiceInMessage extends InMessage {
 		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return "VoiceInMessage [mediaId=" + mediaId + ", format=" + format + ", getToUserName()=" + getToUserName()
+				+ ", getFromUserName()=" + getFromUserName() + ", getCreateType()=" + getCreateType()
+				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
+	}
+	
 }
