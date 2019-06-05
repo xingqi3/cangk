@@ -4,4 +4,7 @@ spring:
        username:xingqisan
        password:123456
 
-   
+   redis:
+      host:120.78.3.25
+      port:6379
+      database:15

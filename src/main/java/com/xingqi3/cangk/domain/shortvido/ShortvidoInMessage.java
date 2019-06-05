@@ -11,6 +11,10 @@ import com.xingqi3.cangk.domain.InMessage;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ShortvidoInMessage extends InMessage {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "MediaId")
 	@JsonProperty("MediaId")
 	private String mediaId;

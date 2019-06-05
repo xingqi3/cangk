@@ -11,6 +11,10 @@ import com.xingqi3.cangk.domain.InMessage;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ImageInMessage extends InMessage {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "PicUrl")
 	@JsonProperty("PicUrl")
 	private String picUrl;

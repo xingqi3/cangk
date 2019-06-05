@@ -11,6 +11,10 @@ import com.xingqi3.cangk.domain.InMessage;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LocationInMessage extends InMessage {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@XmlElement(name = "location_x")
 	@JsonProperty("location_x")
 	private String Location_X;

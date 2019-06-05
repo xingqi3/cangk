@@ -10,6 +10,10 @@ import com.xingqi3.cangk.domain.InMessage;
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LinkInMessage extends InMessage {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected LinkInMessage(String type) {
 		super(type);
 		// TODO 自动生成的构造函数存根
