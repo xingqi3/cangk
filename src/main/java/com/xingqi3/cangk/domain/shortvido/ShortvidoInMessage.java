@@ -43,4 +43,11 @@ public class ShortvidoInMessage extends InMessage {
 		return getSerialversionuid();
 	}
 
+	@Override
+	public String toString() {
+		return "ShortvidoInMessage [mediaId=" + mediaId + ", thumbMediaId=" + thumbMediaId + ", getToUserName()="
+				+ getToUserName() + ", getFromUserName()=" + getFromUserName() + ", getCreateType()=" + getCreateType()
+				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
+	}
+	
 }

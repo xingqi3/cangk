@@ -35,5 +35,11 @@ public class EventInMessage extends InMessage{
 	public static long getSeriaversionuid() {
 		return getSeriaversionuid();
 	}
+	@Override
+	public String toString() {
+		return "EventInMessage [event=" + event + ", eventKey=" + eventKey + ", getToUserName()=" + getToUserName()
+				+ ", getFromUserName()=" + getFromUserName() + ", getCreateType()=" + getCreateType()
+				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
+	}
 	
 }

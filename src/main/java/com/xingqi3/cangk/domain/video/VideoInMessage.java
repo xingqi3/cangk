@@ -43,4 +43,11 @@ public class VideoInMessage extends InMessage {
 		return getSeriaversionuid();
 	}
 
+	@Override
+	public String toString() {
+		return "VideoInMessage [mediaId=" + mediaId + ", thumbMediaId=" + thumbMediaId + ", getToUserName()="
+				+ getToUserName() + ", getFromUserName()=" + getFromUserName() + ", getCreateType()=" + getCreateType()
+				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
+	}
+	
 }

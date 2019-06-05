@@ -23,5 +23,12 @@ public class TextInMessage extends InMessage{
 	public void setContent(String content) {
 		this.content = content;
 	}
+	//如果要打印一些有含义的信息出来必须要重写此方法
+	@Override
+	public String toString() {
+		return "TextInMessage [content=" + content + ", getToUserName()=" + getToUserName() + ", getFromUserName()="
+				+ getFromUserName() + ", getCreateType()=" + getCreateType() + ", getMsgType()=" + getMsgType()
+				+ ", getMsgId()=" + getMsgId() + "]";
+	}
 	
 }

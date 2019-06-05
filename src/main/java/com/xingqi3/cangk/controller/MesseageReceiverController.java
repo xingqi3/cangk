@@ -47,7 +47,8 @@ public class MesseageReceiverController{
 		LOG.debug("收到用户发送给公众号的信息: \n-----------------------------------------\n"
 				+ "{}\n-----------------------------------------\n", xml);
 
-		String type=xml.substring(0);
+		String type=xml.substring(xml.indexOf("<MsgType><![CDATA["));
+		type=type.substring(0,type.indexOf("]]></MsgType>"));
 		Class<InMessage> cla=MessageTypeMapper.getClass(type);
 		
 		InMessage inMessage=JAXB.unmarshal(new StringReader(xml), cla);

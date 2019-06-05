@@ -64,4 +64,12 @@ public class LocationInMessage extends InMessage {
 		return getSeriaversionuid();
 	}
 
+	@Override
+	public String toString() {
+		return "LocationInMessage [Location_X=" + Location_X + ", Location_Y=" + Location_Y + ", Scale=" + Scale
+				+ ", Label=" + Label + ", getToUserName()=" + getToUserName() + ", getFromUserName()="
+				+ getFromUserName() + ", getCreateType()=" + getCreateType() + ", getMsgType()=" + getMsgType()
+				+ ", getMsgId()=" + getMsgId() + "]";
+	}
+	
 }
