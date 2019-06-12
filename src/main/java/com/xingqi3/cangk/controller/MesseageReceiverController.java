@@ -9,6 +9,7 @@ import javax.xml.bind.JAXB;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
@@ -37,6 +38,7 @@ public class MesseageReceiverController{
 	
 	private static final Logger LOG=(Logger) LoggerFactory.getLogger(MesseageReceiverController.class);
 	@Autowired
+	@Qualifier("inMessageTemplate")
 	private RedisTemplate<String,InMessage>inMessageTemplate;
 	@GetMapping // 只处理GET请求
 	public String echo(//
@@ -71,9 +73,11 @@ public class MesseageReceiverController{
 				 
 				ByteArrayOutputStream out=new ByteArrayOutputStream();
 				ObjectOutputStream oos=new ObjectOutputStream(out);
+				oos.writeObject(inMessage);
 				
 			
-				connection.publish(channel.getBytes(), out.toByteArray());
+				Long l=connection.publish(channel.getBytes(), out.toByteArray());
+				System.out.println("发布结果"+l);
 				}catch(Exception e) {
 					LOG.error("把消息放入队列时出现问题"+e.getLocalizedMessage(),e);
 				}

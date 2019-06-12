@@ -12,7 +12,7 @@
 	<artifactId>cangk</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>weixin</name>
-	<description>微信项目</description>
+	<description>微信项目</description> 
 	
 	
 
@@ -87,6 +87,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+				<executable>true</executable>
+				<fork>true</fork>
+				<jmxPort>9100</jmxPort>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

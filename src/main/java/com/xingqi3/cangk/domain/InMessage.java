@@ -13,6 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @XmlRootElement(name = "xml")
 public abstract class InMessage implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	@XmlElement(name = "ToUserName")
 	@JsonProperty("ToUserName")
 	private String toUserName;
