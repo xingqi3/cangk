@@ -63,6 +63,7 @@ public class MesseageReceiverController{
 		Class<InMessage> cla=MessageTypeMapper.getClass(type);
 		InMessage inMessage=JAXB.unmarshal(new StringReader(xml),cla);	
 		LOG.debug("转换得到的消息对象\n{}\n",inMessage.toString());
+		inMessageTemplate.convertAndSend("sc"+inMessage.getMsgType(), inMessage);
 		inMessageTemplate.execute(new RedisCallback<String>(){
 
 			@Override

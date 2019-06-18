@@ -6,11 +6,10 @@ import org.springframework.stereotype.Service;
 
 import com.xingqi3.cangk.controller.MesseageReceiverController;
 import com.xingqi3.cangk.domain.InMessage;
+import com.xingqi3.cangk.domain.OUtMessage;
 import com.xingqi3.cangk.service.MessageService;
 
 import ch.qos.logback.classic.Logger;
-
-import com.xingqi3.cangk.domain.OUtMessage;
 @Service
 public class MessageServiceimpl implements MessageService{
 	
