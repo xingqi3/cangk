@@ -19,13 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.xingqi3.cangk.domain.InMessage;
 import com.xingqi3.cangk.service.MessageTypeMapper;
 
-// 控制器 : 负责接收用户的请求参数、调用业务逻辑层代码、返回视图/结果给客户端（浏览器）
-// @Controller  基于JSP的控制器
-// @RestController 符合RESTful风格的WEB服务的控制器
-// RESTful通过不同的请求方法调用不同的处理程序，返回的结果仅仅是数据，不包含视图（HTML、JSP）
-@RestController
-// 各自写代码的时候，把/kemao_1改为【/拼音名】，用于后面作为路径反向代理的时候区分不同人的代码
-// @RequestMapping表示的含义：URL跟控制器的关系映射
 @RequestMapping("/sc/cangk/receiver")
 public class MesseageReceiverController {
 
