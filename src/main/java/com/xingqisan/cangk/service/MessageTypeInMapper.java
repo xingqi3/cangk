@@ -28,7 +28,6 @@ public class MessageTypeInMapper {
 		typeMap.put("shortvido",ShortvidoInMessage.class);
 		typeMap.put("link",LinkInMessage.class);
 	}
-	@SuppressWarnings("unchecked")
 	public static <T extends InMessage> Class<T>getClass(String type){
 		return (Class<T>) typeMap.get(type);
 	}
