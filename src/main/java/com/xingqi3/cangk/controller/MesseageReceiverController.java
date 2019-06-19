@@ -35,11 +35,7 @@ public class MesseageReceiverController {
 			@RequestParam("nonce") String nonce, //
 			@RequestParam("echostr") String echostr//
 	) {
-		// 正常来讲，需要把timestamp和nonce放入一个数组，并进行排序
-		// 接着把排序后的两个元素拼接成一个新的String
-		// 使用SHA-1算法对新的String进行加密
-		// 最后把加密的结果跟signature进行比较，如果相同表示验证通过，返回echostr
-
+		
 		// 原路返回echostr的值，返回以后微信公众号平台就能够认为：服务器对接成功
 		return echostr;
 	}
@@ -54,13 +50,6 @@ public class MesseageReceiverController {
 			@RequestBody String xml) {
 		LOG.debug("收到用户发送给公众号的信息: \n-----------------------------------------\n"
 				+ "{}\n-----------------------------------------\n", xml);
-
-//		if (xml.contains("<MsgType><![CDATA[text]]></MsgType>")) {
-//		} else if (xml.contains("<MsgType><![CDATA[image]]></MsgType>")) {
-//		} else if (xml.contains("<MsgType><![CDATA[voice]]></MsgType>")) {
-//		} else if (xml.contains("<MsgType><![CDATA[video]]></MsgType>")) {
-//		} else if (xml.contains("<MsgType><![CDATA[location]]></MsgType>")) {
-//		}
 
 		// 截取消息类型
 		// <MsgType><![CDATA[text]]></MsgType>
