@@ -11,7 +11,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import com.xingqi3.cangk.domain.InMessage;
 import com.xingqi3.cangk.service.JsonRedisSerializer;
-
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class WeixinApplication {
 
