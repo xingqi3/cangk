@@ -1,4 +1,4 @@
-package com.xingqi3.cangk.controller;
+package com.xingqisan.cangk.controller;
 
 import java.io.StringReader;
 
@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xingqi3.cangk.domain.InMessage;
-import com.xingqi3.cangk.service.MessageTypeMapper;
+import com.xingqisan.cangk.domain.InMessage;
+import com.xingqisan.cangk.service.MessageTypeInMapper;
+
 @RestController
 @RequestMapping("/sc/cangk/receiver")
 public class MesseageReceiverController {
@@ -50,7 +51,7 @@ public class MesseageReceiverController {
 		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[") + 18);
 		type = type.substring(0, type.indexOf("]]></MsgType>"));
 
-		Class<InMessage> cla = MessageTypeMapper.getClass(type);
+		Class<InMessage> cla = MessageTypeInMapper.getClass(type);
 
 
 		InMessage inMessage = JAXB.unmarshal(new StringReader(xml), cla);

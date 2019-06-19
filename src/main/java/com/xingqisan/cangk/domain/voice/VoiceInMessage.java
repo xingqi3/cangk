@@ -1,11 +1,12 @@
-package com.xingqi3.cangk.domain.voice;
+package com.xingqisan.cangk.domain.voice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.xingqi3.cangk.domain.InMessage;
+import com.xingqisan.cangk.domain.InMessage;
+
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class VoiceInMessage extends InMessage {

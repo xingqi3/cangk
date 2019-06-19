@@ -1,4 +1,4 @@
-package com.xingqi3.cangk.service;
+package com.xingqisan.cangk.service;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -8,7 +8,8 @@ import java.io.DataOutputStream;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
 
-import com.xingqi3.cangk.domain.InMessage;
+import com.xingqisan.cangk.domain.InMessage;
+
 
 public class JsonRedisSerializer extends Jackson2JsonRedisSerializer<InMessage> {
 	public JsonRedisSerializer() {

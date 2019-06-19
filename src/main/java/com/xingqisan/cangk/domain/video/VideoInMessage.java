@@ -1,4 +1,4 @@
-package com.xingqi3.cangk.domain.shortvido;
+package com.xingqisan.cangk.domain.video;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -6,10 +6,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.xingqi3.cangk.domain.InMessage;
+import com.xingqisan.cangk.domain.InMessage;
+
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class ShortvidoInMessage extends InMessage {
+public class VideoInMessage extends InMessage {
 
 	/**
 	 * 
@@ -22,7 +23,7 @@ public class ShortvidoInMessage extends InMessage {
 	@JsonProperty("ThumbMediaId")
 	private String thumbMediaId;
 
-	protected ShortvidoInMessage(String type) {
+	protected VideoInMessage(String type) {
 		super(type);
 		// TODO Auto-generated constructor stub
 	}
@@ -43,13 +44,13 @@ public class ShortvidoInMessage extends InMessage {
 		this.thumbMediaId = thumbMediaId;
 	}
 
-	public static long getSerialversionuid() {
-		return getSerialversionuid();
+	public static long getSeriaversionuid() {
+		return getSeriaversionuid();
 	}
 
 	@Override
 	public String toString() {
-		return "ShortvidoInMessage [mediaId=" + mediaId + ", thumbMediaId=" + thumbMediaId + ", getToUserName()="
+		return "VideoInMessage [mediaId=" + mediaId + ", thumbMediaId=" + thumbMediaId + ", getToUserName()="
 				+ getToUserName() + ", getFromUserName()=" + getFromUserName() + ", getCreateType()=" + getCreateType()
 				+ ", getMsgType()=" + getMsgType() + ", getMsgId()=" + getMsgId() + "]";
 	}

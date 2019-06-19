@@ -1,4 +1,4 @@
-package com.xingqi3.cangk.domain;
+package com.xingqisan.cangk.domain;
 
 import java.io.Serializable;
 

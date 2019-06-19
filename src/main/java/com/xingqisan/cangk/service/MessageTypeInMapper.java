@@ -1,21 +1,21 @@
-package com.xingqi3.cangk.service;
+package com.xingqisan.cangk.service;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.xingqi3.cangk.domain.InMessage;
-import com.xingqi3.cangk.domain.event.EventInMessage;
-import com.xingqi3.cangk.domain.image.ImageInMessage;
-import com.xingqi3.cangk.domain.link.LinkInMessage;
-import com.xingqi3.cangk.domain.location.LocationInMessage;
-import com.xingqi3.cangk.domain.shortvido.ShortvidoInMessage;
-import com.xingqi3.cangk.domain.text.TextInMessage;
-import com.xingqi3.cangk.domain.video.VideoInMessage;
-import com.xingqi3.cangk.domain.voice.VoiceInMessage;
+import com.xingqisan.cangk.domain.InMessage;
+import com.xingqisan.cangk.domain.Image.ImageInMessage;
+import com.xingqisan.cangk.domain.event.EventInMessage;
+import com.xingqisan.cangk.domain.link.LinkInMessage;
+import com.xingqisan.cangk.domain.location.LocationInMessage;
+import com.xingqisan.cangk.domain.shortvido.ShortvidoInMessage;
+import com.xingqisan.cangk.domain.text.TextInMessage;
+import com.xingqisan.cangk.domain.video.VideoInMessage;
+import com.xingqisan.cangk.domain.voice.VoiceInMessage;
 
 
 
-public class MessageTypeMapper {
+public class MessageTypeInMapper {
 	
 	private static Map<String,Class<? extends InMessage>> typeMap=new ConcurrentHashMap<>();
 	static {

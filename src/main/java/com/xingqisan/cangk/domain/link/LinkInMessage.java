@@ -1,4 +1,4 @@
-package com.xingqi3.cangk.domain.link;
+package com.xingqisan.cangk.domain.link;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -6,7 +6,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.xingqi3.cangk.domain.InMessage;
+import com.xingqisan.cangk.domain.InMessage;
+
 @XmlRootElement(name="xml")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LinkInMessage extends InMessage {
