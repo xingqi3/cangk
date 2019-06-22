@@ -15,7 +15,7 @@
 	<logger name="org.hibernate.SQL" level="trace" />
 	<logger name="org.hibernate.type.descriptor.sql.BasicBinder"
 		level="trace" />
-	<logger name="com/xingqi3" level="trace" />
+	<logger name="com/xingqisan" level="trace" />
 
 	<root level="error">
 		<appender-ref ref="CONSOLE" />
