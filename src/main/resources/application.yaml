@@ -1,6 +1,6 @@
 spring:
    datasource:
-       url:jdbc:mysql://127.0.0.1:3306/xingqisan?useSSL=false&serverTimezone=CST
+       url:jdbc:mysql://127.0.0.1:3306/xingqisan?useSSL=false&serverTimezone=CST&allowPublicKeyRetrieval=true
        username:xingqisan
        password:123456
 
@@ -8,3 +8,6 @@ spring:
       host:120.78.3.25
       port:6379
       database:15
+     
+
+      
