@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<!-- 继承Spring Boot的父项目，里面包含了一系列的依赖包管理，后面可以不写包的版本号，通过父项目来统一管理版本号 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.3.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.xingqi3</groupId>
+
+	<!-- 本项目的信息 -->
+	<!-- 分组的ID，域名倒写 -->
+	<groupId>com.xingqisan</groupId>
+	<!-- 项目名称，jar文件的名称 -->
 	<artifactId>cangk</artifactId>
+	<!-- 本项目的版本号 -->
 	<version>0.0.1-SNAPSHOT</version>
-	<name>weixin</name>
-	<description>微信项目</description> 
-	
-	
+	<!-- 项目的显示名称，但是在Eclipse里面不生效 -->
+	<name>cangk</name>
+	<!-- 项目描述 -->
+	<description>微信项目</description>
 
 	<properties>
+		<!-- 基于Spring Boot项目可以使用java.version来指定JDK的版本号，可选的：1.8、9、10、11 -->
+		<!-- 11是目前最新的稳定版，下一个稳定版2年后发布 -->
 		<java.version>11</java.version>
-		<project.buil.sourceEncoding>UTF-8</project.buil.sourceEncoding>
+		<!-- 源代码的字符编码 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 报告文件的字符编码 -->
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<dependencies>
-	<dependency>
+		<!-- JAXB的API，一般引入Spring、JPA相关的依赖以后，往往都会有 -->
+		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 		</dependency>
@@ -41,45 +52,50 @@
 			<version>2.3.2</version>
 		</dependency>
 
-	
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-		</dependency>
-		
-		
+		<!-- Jackson原本是用于Java和JSON相互转换的，后来为了实现Java和XML的转换，增加了jackson-dataformat-xml -->
+		<!-- 如果要使用Jackson，那么就用这个转换器即可！ -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
+
+
+		<!-- 自动配置Spring Data JPA，使用Hibernate实现 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!-- 自动配置Redis，使用Lettuce驱动 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
+		<!-- 自动配置Spring MVC -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- 数据库驱动 -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- Spring Boot的测试支持 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- 单元测试框架 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<!-- <version>4.12</version> -->
 			<scope>test</scope>
 		</dependency>
+
+		<!-- 开发者工具，用于实现热部署（修改文件以后马上生效） -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -89,15 +105,21 @@
 	</dependencies>
 
 	<build>
-	
 		<plugins>
+			<!-- Spring Boot的Maven插件，用于在打包的时候把所有相关jar文件打包在一起 -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-				<executable>true</executable>
-				<fork>true</fork>
-				<jmxPort>9100</jmxPort>
+					<!-- 可以打包成一个可执行jar文件 -->
+					<executable>true</executable>
+					<!-- fork为true的时候 -->
+					<!-- 将可以使用 mvn spring-boot:start 启动程序 -->
+					<!-- 并且可以使用 mvn spring-boot:stop 停止程序 -->
+					<fork>true</fork>
+					<!-- 每个fork出来的进程都会需要一个JMX端口，不能重复 -->
+					<!-- 建议：每个人使用一段的端口号，比如阿宝使用 9001~9099，小宝使用9100~9199 -->
+					<jmxPort>9100</jmxPort>
 				</configuration>
 			</plugin>
 		</plugins>
