@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import com.xingqisan.cangk.domain.InMessage;
 import com.xingqisan.cangk.service.JsonRedisSerializer;
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 public class WeixinApplication {
 
 	// 相当于Spring的XML配置方式中的<bean>元素
