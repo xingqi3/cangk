@@ -8,10 +8,14 @@ import java.io.DataOutputStream;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xingqisan.cangk.domain.InMessage;
 
 
 public class JsonRedisSerializer extends Jackson2JsonRedisSerializer<InMessage> {
+	
+	private ObjectMapper objectMapper = new ObjectMapper();
+
 	public JsonRedisSerializer() {
 		super(InMessage.class);
 	}

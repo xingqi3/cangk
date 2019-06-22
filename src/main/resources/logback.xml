@@ -15,11 +15,6 @@
 	<logger name="org.hibernate.SQL" level="trace" />
 	<logger name="org.hibernate.type.descriptor.sql.BasicBinder"
 		level="trace" />
-
-	<!-- 根据getLogger方法传入的名称模糊匹配，支持前精确匹配 -->
-	<!-- org.fkjava能够匹配到相同包里面的全部类的日志记录器 -->
-	<!-- trace是最详细的日志跟踪级别，可以输出完整的日志信息 -->
-	<!-- trace > debug > info > warn > error > off -->
 	<logger name="com/xingqi3" level="trace" />
 
 	<root level="error">
