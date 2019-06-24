@@ -81,7 +81,7 @@ public class MessageReceiverController {
 		LOG.debug("转换得到的消息对象 \n{}\n", inMessage.toString());
 
 		// 使用默认的序列化程序来实现序列化
-		inMessageTemplate.convertAndSend("kemao_1_" + inMessage.getMsgType(), inMessage);
+		inMessageTemplate.convertAndSend("sc" + inMessage.getMsgType(), inMessage);
 
 //		// 把消息放入消息队列
 //		inMessageTemplate.execute(new RedisCallback<String>() {

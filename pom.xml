@@ -119,7 +119,7 @@
 					<fork>true</fork>
 					<!-- 每个fork出来的进程都会需要一个JMX端口，不能重复 -->
 					<!-- 建议：每个人使用一段的端口号，比如阿宝使用 9001~9099，小宝使用9100~9199 -->
-					<jmxPort>9100</jmxPort>
+					<jmxPort>9001</jmxPort>
 				</configuration>
 			</plugin>
 		</plugins>
