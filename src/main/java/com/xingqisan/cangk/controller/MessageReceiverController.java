@@ -18,13 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.xingqisan.cangk.domain.InMessage;
 import com.xingqisan.cangk.service.MessageTypeMapper;
 
-// 控制器 : 负责接收用户的请求参数、调用业务逻辑层代码、返回视图/结果给客户端（浏览器）
-// @Controller  基于JSP的控制器
-// @RestController 符合RESTful风格的WEB服务的控制器
-// RESTful通过不同的请求方法调用不同的处理程序，返回的结果仅仅是数据，不包含视图（HTML、JSP）
 @RestController
-// 各自写代码的时候，把/kemao_1改为【/拼音名】，用于后面作为路径反向代理的时候区分不同人的代码
-// @RequestMapping表示的含义：URL跟控制器的关系映射
+//各自写代码的时候，把/kemao_1改为【/拼音名】，用于后面作为路径反向代理的时候区分不同人的代码
+//@RequestMapping表示的含义：URL跟控制器的关系映射
 @RequestMapping("/sc/cangk/receiver")
 public class MessageReceiverController {
 
@@ -81,7 +77,7 @@ public class MessageReceiverController {
 		LOG.debug("转换得到的消息对象 \n{}\n", inMessage.toString());
 
 		// 使用默认的序列化程序来实现序列化
-		inMessageTemplate.convertAndSend("sc" + inMessage.getMsgType(), inMessage);
+		inMessageTemplate.convertAndSend("kemao_1_" + inMessage.getMsgType(), inMessage);
 
 //		// 把消息放入消息队列
 //		inMessageTemplate.execute(new RedisCallback<String>() {
